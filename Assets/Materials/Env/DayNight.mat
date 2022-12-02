@@ -60,11 +60,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _DayIntensity: 0.4034118
+    - _DayIntensity: 0.40888983
     - _Day_Intensity: 0.3
     - _Mix: 0.41575527
     - _Mult: 1
-    - _NightIntensity: 0.27160263
+    - _NightIntensity: 0.22495063
     - _Night_Intensity: 1
     - _QueueControl: 0
     - _QueueOffset: 0

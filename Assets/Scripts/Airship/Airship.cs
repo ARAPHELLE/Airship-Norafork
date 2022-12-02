@@ -23,6 +23,8 @@ public class Airship : MonoBehaviour
     //      they are never a child of the ship again)
     public Wheel wheel; // Wheel yknow
     public Vector3 movement = new Vector3(0, 0, 5f); // Speed of the ship
+    private Vector3 moveDelta;
+    private float vertMove;
     public float turnSpeed = 0.2f; // Turn speed
     public float turnAmount = 20f; // Turn angle
 
@@ -81,7 +83,11 @@ public class Airship : MonoBehaviour
         // Turn the ship towards 
 
         if (wheel.IsInteracting)
+        {
             desiredTurn += PlayerInputs.Movement.x;
+            vertMove = PlayerInputs.Movement.y;
+        }
+            
         // Turn the ship if the player is interacting with the wheel
 
         // Easing the turn value so steering is smoothed
@@ -89,12 +95,12 @@ public class Airship : MonoBehaviour
         Turn = (EaseInOutQuad(0, 1, (turnPlusMinus1 + 1) / 2f) * 2 - 1) * turnAmount;
 
         // VVV How much the ship will move
-        Vector3 delta = (-transform.forward * movement.z + Vector3.up * movement.y) * Time.deltaTime;
+        moveDelta = (-transform.forward * movement.z + Vector3.up * (vertMove * 5.0f)) * Time.deltaTime;
 
         if (DockingSystem.Docking)
         {
             //delta = Vector3.zero;
-            delta = transform.position.DirectionTo_NoNormalize
+            moveDelta = transform.position.DirectionTo_NoNormalize
                 (DockingSystem.ActiveSystem.transform.position) * Time.deltaTime;
             //desiredTurn = 0;
             turnPlusMinus1 = 0;
@@ -110,12 +116,11 @@ public class Airship : MonoBehaviour
             }
         }
 
-        MovePlayer(delta, Turn);
-        MoveKids(delta, Turn);
+        
         // ^^^ Move the player and children along with the ship
 
         // VVV Move and rotate the ship itself
-        transform.position += delta;
+        transform.position += moveDelta;
         transform.Rotate(Vector3.up * Turn * Time.deltaTime);
 
 
@@ -127,6 +132,11 @@ public class Airship : MonoBehaviour
         //MovePlayer(transform.position - pos, turn);
     }
 
+    private void LateUpdate()
+    {
+        MovePlayer(moveDelta, Turn);
+        MoveKids(moveDelta, Turn);
+    }
 
     void IntroSpiel()
     {
