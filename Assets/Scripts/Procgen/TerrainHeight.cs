@@ -31,6 +31,8 @@ public class TerrainHeight : MonoBehaviour
 
     public void SetHeight()
     {
+        terrain = GetComponent<Terrain>();
+        hmRes = terrain.terrainData.heightmapResolution;
         /*
         float[,] heights = new float[hmRes, hmRes];
         for (int i = 0; i < hmRes; i++)

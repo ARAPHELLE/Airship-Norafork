@@ -46,6 +46,7 @@ public class ProcGen : MonoBehaviour
 
     public void Gen()
     {
+        main.seed = Random.Range(1, 99999);
         UploadValues();
 
         terrain.temp = temp;

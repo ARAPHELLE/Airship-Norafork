@@ -46,7 +46,7 @@ Material:
     - _Colour_Blend: 15
     - _Colour_Divider: 2
     - _Colour_Power: 15.91
-    - _Metallic: 0.5
+    - _Metallic: 0
     - _Noise_Roughness: 2.46
     - _Normal_Scale: 0.26
     - _Normal_Strength: 0.35
@@ -55,7 +55,7 @@ Material:
     - _QueueOffset: 0
     - _Roughness: 0.4
     - _Scale: 1
-    - _Smoothness: 0.3
+    - _Smoothness: 0
     m_Colors:
     - _Colour: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
     - _Colour_2: {r: 0.0252314, g: 0.08610529, b: 0.1981132, a: 1}

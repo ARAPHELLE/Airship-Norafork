@@ -33,7 +33,7 @@ MonoBehaviour:
   m_Shader: {fileID: 4800000, guid: 0849e84e3d62649e8882e9d6f056a017, type: 3}
   m_Settings:
     Downsample: 0
-    AfterOpaque: 0
+    AfterOpaque: 1
     Source: 1
     NormalSamples: 1
     Intensity: 0.5
@@ -97,7 +97,7 @@ MonoBehaviour:
       type: 3}
     objectMotionVector: {fileID: 4800000, guid: 7b3ede40266cd49a395def176e1bc486,
       type: 3}
-  m_AssetVersion: 1
+  m_AssetVersion: 2
   m_OpaqueLayerMask:
     serializedVersion: 2
     m_Bits: 16375
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_ShadowTransparentReceive: 1
   m_RenderingMode: 1
   m_DepthPrimingMode: 0
+  m_CopyDepthMode: 0
   m_AccurateGbufferNormals: 0
   m_ClusteredRendering: 0
   m_TileSize: 32
@@ -132,14 +133,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Active: 1
   settings:
-    color: {r: 0.84206957, g: 0.95325696, b: 0.9710186, a: 1}
-    sunColor: {r: 0.8028722, g: 0.7675504, b: 0.67312753, a: 1}
+    color: {r: 0.84660786, g: 0.96357185, b: 0.9822563, a: 1}
+    sunColor: {r: 0.79517394, g: 0.7590495, b: 0.6627483, a: 1}
     fogDensity: 0.01
     fogDensityPower: 0.1
     skyAlpha: 0.8
     useHeightFog: 1
     fogHeightStart: -100
-    fogHeightEnd: 95.896454
+    fogHeightEnd: 103.65861
     fogHeightPower: 0.2
     extraFogHeightEnd: -50
     extraFogHeightPower: 0.9

@@ -116,7 +116,7 @@ public class Airship : MonoBehaviour
             }
         }
 
-        
+
         // ^^^ Move the player and children along with the ship
 
         // VVV Move and rotate the ship itself
@@ -174,9 +174,8 @@ public class Airship : MonoBehaviour
 
     void MovePlayer(Vector3 delta, float y)
     {
-        //playerController.Move(delta);
-        playerController.enabled = false;
         playerController.transform.position += delta;
+        playerController.enabled = false;
         playerController.transform.RotateAround(transform.position, Vector3.up, y * Time.deltaTime);
         playerController.enabled = true;
         // Moves and rotates player, must disable cc to rotate player
